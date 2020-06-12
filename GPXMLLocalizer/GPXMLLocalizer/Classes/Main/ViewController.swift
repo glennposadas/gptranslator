@@ -9,19 +9,50 @@
 import Cocoa
 
 class ViewController: NSViewController {
+    
+    // MARK: - Properties
+    
+    typealias SelectedFilesBlock = ((_ urls: [URL]) -> Void)?
+    
+    private var englishPaths = [URL]()
+    private var italianPaths = [URL]()
+    
+    // MARK: - Functions
+    // MARK: Overrides
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
+    
+    private func handleSelectionOfFiles(withBlock completion: SelectedFilesBlock) {
+        let dialog = NSOpenPanel()
+        dialog.title = "Choose a .xml files"
+        dialog.canCreateDirectories = true
+        dialog.allowsMultipleSelection = true
+        dialog.allowedFileTypes = ["xml"]
+        
+        if (dialog.runModal() == NSApplication.ModalResponse.OK) {
+            let result = dialog.urls
+            completion?(result)
+            return
+        }
 
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
+        completion?([])
+    }
+    
+    // MARK: IBActions
+    
+    @IBAction func selectEnglishFiles(_ sender: NSButton) {
+        self.handleSelectionOfFiles { urls in
+            self.englishPaths = urls
         }
     }
-
-
+    
+    @IBAction func selectItalianFiles(_ sender: NSButton) {
+        self.handleSelectionOfFiles { urls in
+            self.italianPaths = urls
+        }
+    }
 }
 
