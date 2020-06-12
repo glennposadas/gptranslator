@@ -96,12 +96,11 @@
 		40B6D6002493E39500B7837F /* GPXMLLocalizer */ = {
 			isa = PBXGroup;
 			children = (
-				40B6D6012493E39500B7837F /* AppDelegate.swift */,
-				40B6D6032493E39500B7837F /* ViewController.swift */,
-				40B6D6052493E39700B7837F /* Assets.xcassets */,
-				40B6D6072493E39700B7837F /* Main.storyboard */,
-				40B6D60A2493E39700B7837F /* Info.plist */,
-				40B6D60B2493E39700B7837F /* GPXMLLocalizer.entitlements */,
+				40B6D62D2493E48700B7837F /* App */,
+				40B6D62E2493E48D00B7837F /* Plist */,
+				40B6D62F2493E49400B7837F /* Classes */,
+				40B6D6312493E4A800B7837F /* Storyboards */,
+				40B6D6322493E4BA00B7837F /* Resources */,
 			);
 			path = GPXMLLocalizer;
 			sourceTree = "<group>";
@@ -122,6 +121,55 @@
 				40B6D6212493E39700B7837F /* Info.plist */,
 			);
 			path = GPXMLLocalizerUITests;
+			sourceTree = "<group>";
+		};
+		40B6D62D2493E48700B7837F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				40B6D6012493E39500B7837F /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		40B6D62E2493E48D00B7837F /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				40B6D60A2493E39700B7837F /* Info.plist */,
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		40B6D62F2493E49400B7837F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				40B6D6302493E49C00B7837F /* Main */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		40B6D6302493E49C00B7837F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				40B6D6032493E39500B7837F /* ViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		40B6D6312493E4A800B7837F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				40B6D6072493E39700B7837F /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		40B6D6322493E4BA00B7837F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				40B6D60B2493E39700B7837F /* GPXMLLocalizer.entitlements */,
+				40B6D6052493E39700B7837F /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,12 +467,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = GPXMLLocalizer/GPXMLLocalizer.entitlements;
+				CODE_SIGN_ENTITLEMENTS = GPXMLLocalizer/Resources/GPXMLLocalizer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = C5AT64N5XL;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = GPXMLLocalizer/Info.plist;
+				INFOPLIST_FILE = GPXMLLocalizer/Plist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -439,12 +487,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = GPXMLLocalizer/GPXMLLocalizer.entitlements;
+				CODE_SIGN_ENTITLEMENTS = GPXMLLocalizer/Resources/GPXMLLocalizer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = C5AT64N5XL;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = GPXMLLocalizer/Info.plist;
+				INFOPLIST_FILE = GPXMLLocalizer/Plist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
