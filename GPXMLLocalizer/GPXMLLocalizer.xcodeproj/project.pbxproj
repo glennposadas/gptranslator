@@ -14,6 +14,7 @@
 		40B6D6092493E39700B7837F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40B6D6072493E39700B7837F /* Main.storyboard */; };
 		40B6D6152493E39700B7837F /* GPXMLLocalizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B6D6142493E39700B7837F /* GPXMLLocalizerTests.swift */; };
 		40B6D6202493E39700B7837F /* GPXMLLocalizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B6D61F2493E39700B7837F /* GPXMLLocalizerUITests.swift */; };
+		40C13477249528CE00B0C110 /* String+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C13476249528CE00B0C110 /* String+Parser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		40B6D61B2493E39700B7837F /* GPXMLLocalizerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPXMLLocalizerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40B6D61F2493E39700B7837F /* GPXMLLocalizerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPXMLLocalizerUITests.swift; sourceTree = "<group>"; };
 		40B6D6212493E39700B7837F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40C13476249528CE00B0C110 /* String+Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Parser.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				40408C422494FF790044041A /* Parser.swift */,
+				40C13476249528CE00B0C110 /* String+Parser.swift */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40B6D6042493E39500B7837F /* ViewController.swift in Sources */,
+				40C13477249528CE00B0C110 /* String+Parser.swift in Sources */,
 				40B6D6022493E39500B7837F /* AppDelegate.swift in Sources */,
 				40408C432494FF790044041A /* Parser.swift in Sources */,
 			);

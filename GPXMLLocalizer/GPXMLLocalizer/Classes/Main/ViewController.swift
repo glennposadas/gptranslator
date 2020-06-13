@@ -42,7 +42,7 @@ class ViewController: NSViewController {
     
     private func handleSelectionOfFiles(withBlock completion: SelectedFilesBlock) {
         let dialog = NSOpenPanel()
-        dialog.title = "Choose a .xml files"
+        dialog.title = "Choose your .xml files"
         dialog.canCreateDirectories = true
         dialog.allowsMultipleSelection = true
         dialog.allowedFileTypes = ["xml"]
@@ -58,6 +58,29 @@ class ViewController: NSViewController {
     
     private func setupUI() {
         self.loader.alphaValue = 0
+    }
+    
+    private func buildFiles() {
+        for (index, str) in self.englishKeys.enumerated() {
+            print("KEY: \(str) | VALUE: \(self.englishValues[index])")
+        }
+        self.handleSuccess()
+    }
+    
+    private func handleSuccess() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+            self.generateBtn.wantsLayer = true
+            self.loader.wantsLayer = true
+            self.loader.stopAnimation(self)
+            
+            NSAnimationContext.runAnimationGroup({ context in
+                context.duration = 0.3
+                self.generateBtn.alphaValue = 1.0
+            }, completionHandler: {
+                self.loader.alphaValue = 0
+                self.showCompletionAlert()
+            })
+        }
     }
     
     private func showCompletionAlert() {
@@ -86,8 +109,8 @@ class ViewController: NSViewController {
     // MARK: IBActions
     
     @IBAction func generate(_ sender: Any) {
-        let firstURL = self.englishPaths.first!
-        let parser = XMLParser(contentsOf: firstURL)
+        let first = self.englishPaths.first!
+        let parser = XMLParser(contentsOf: first)
         parser?.delegate = self
         parser?.parse()
     }
@@ -121,28 +144,19 @@ extension ViewController: XMLParserDelegate {
     }
     
     func parserDidEndDocument(_ parser: XMLParser) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-            self.generateBtn.wantsLayer = true
-            self.loader.wantsLayer = true
-            self.loader.stopAnimation(self)
-            
-            NSAnimationContext.runAnimationGroup({ context in
-                context.duration = 0.3
-                self.generateBtn.alphaValue = 1.0
-            }, completionHandler: {
-                self.loader.alphaValue = 0
-                self.showCompletionAlert()
-            })
-        }
+        self.buildFiles()
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
-        print("Found characters!!! \(string)")
-        self.englishValues.append(string)
+        var value = string
+        if value.isEmpty || value == "\n    " { return }
+        value.replacePlaceholders()
+        self.englishValues.append(value)
     }
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
-        guard let key = attributeDict["name"] else { return }
+        guard let key = attributeDict["name"],
+            !key.isEmpty else { return }
         self.englishKeys.append(key)
     }
     
