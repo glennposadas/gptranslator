@@ -48,6 +48,15 @@ class ViewController: NSViewController {
         for (index, str) in self.englishKeys.enumerated() {
             print("KEY: \(str) | VALUE: \(self.englishValues[index])")
         }
+        
+        let filename = DIRManager.documentsDirectory.appendingPathComponent("English.txt")
+
+        do {
+            try "HELLOOOZZZ".write(to: filename, atomically: true, encoding: .utf8)
+        } catch {
+            self.showFileWriteError()
+        }
+        
         self.handleSuccess()
     }
     
@@ -111,9 +120,10 @@ extension ViewController: XMLParserDelegate {
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         var value = string
-        if value.isEmpty || value == "\n    " { return }
-        value.replacePlaceholders()
-        self.englishValues.append(value)
+        if value.isValidValue {
+            value.replacePlaceholders()
+            self.englishValues.append(value)
+        }
     }
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {

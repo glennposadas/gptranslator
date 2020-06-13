@@ -12,19 +12,35 @@ typealias SelectedFilesBlock = ((_ urls: [URL]) -> Void)?
 
 extension NSViewController {
     func showCompletionAlert() {
+        self.showAlert(
+            message: "Success parsing!",
+            infoText: "You may see the output in your desktop folder.",
+            style: .informational
+        )
+    }
+    
+    func showFileWriteError() {
+        self.showAlert(
+            message: "Error saving file.",
+            infoText: "An error has occured while attmeping to save data to text files. Please check your permission settings.",
+            style: .critical
+        )
+    }
+    
+    func showAlert(message: String, infoText: String, style: NSAlert.Style) {
         let alert = NSAlert()
-        alert.messageText = "Success parsing!"
-        alert.informativeText = "You may see the output in your desktop folder."
+        alert.messageText = message
+        alert.informativeText = infoText
         alert.addButton(withTitle: "OK")
         alert.alertStyle = .informational
         
         var w: NSWindow?
         if let window = view.window {
             w = window
-        }
-        else if let window = NSApplication.shared.windows.first {
+        } else if let window = NSApplication.shared.windows.first {
             w = window
         }
+        
         if let window = w {
             alert.beginSheetModal(for: window){ (modalResponse) in
                 if modalResponse == .alertFirstButtonReturn {
