@@ -170,7 +170,9 @@
 		40B6D6302493E49C00B7837F /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				40B6D6032493E39500B7837F /* ViewController.swift */,
+				40C1347F2495351100B0C110 /* Models */,
+				40C134802495351700B0C110 /* Views */,
+				40C134812495352900B0C110 /* ViewModels */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -206,6 +208,28 @@
 				40C1347C2495333A00B0C110 /* NSViewControllerExtension.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		40C1347F2495351100B0C110 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		40C134802495351700B0C110 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				40B6D6032493E39500B7837F /* ViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		40C134812495352900B0C110 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
