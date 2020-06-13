@@ -10,26 +10,21 @@ import Foundation
 
 extension String {
     /**
-     Replaces the php-like placeholders.
-     - ref: https://stackoverflow.com/questions/62361346/convert-placeholders-such-as-1s-to-x-in-swift
-     */
+    Replaces the php-like placeholders.
+    - ref: https://stackoverflow.com/questions/62361346/convert-placeholders-such-as-1s-to-x-in-swift
+    */
     mutating func replacePlaceholders() {
-        let regex = try! NSRegularExpression(pattern: "(?<=%)[^$s]+")
-        
-        let range = NSRange(location: 0, length: self.utf16.count)
-        
-        let matches = regex.matches(in: self, options: [], range: range)
-        
-        matches.forEach {
-            let range = Range($0.range, in: self)!
-            let new = String(self[range])
-            if let newNum = Int(new) {
-                let newStr = "\(newNum - 1)"
-                self.replaceSubrange(range, with: newStr)
+        let pattern = #"%(\d*)\$s"#
+        var range = self.range(of: pattern, options: .regularExpression)
+
+        while range != nil {
+            let placeholder = self[range!]
+            let number = placeholder.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789.").inverted)
+
+            if let value = Int(number) {
+                self = self.replacingOccurrences(of: placeholder, with: "{\(value - 1)}")
             }
+            range = self.range(of: pattern, options: .regularExpression)
         }
-        
-        self = self.replacingOccurrences(of: "%", with: "{")
-        self = self.replacingOccurrences(of: "$s", with: "}")
     }
 }
