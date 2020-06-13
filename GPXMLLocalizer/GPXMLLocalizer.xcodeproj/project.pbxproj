@@ -15,6 +15,8 @@
 		40B6D6152493E39700B7837F /* GPXMLLocalizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B6D6142493E39700B7837F /* GPXMLLocalizerTests.swift */; };
 		40B6D6202493E39700B7837F /* GPXMLLocalizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B6D61F2493E39700B7837F /* GPXMLLocalizerUITests.swift */; };
 		40C13477249528CE00B0C110 /* String+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C13476249528CE00B0C110 /* String+Parser.swift */; };
+		40C1347A249532CE00B0C110 /* DIRManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C13479249532CE00B0C110 /* DIRManager.swift */; };
+		40C1347D2495333A00B0C110 /* NSViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C1347C2495333A00B0C110 /* NSViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		40B6D61F2493E39700B7837F /* GPXMLLocalizerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPXMLLocalizerUITests.swift; sourceTree = "<group>"; };
 		40B6D6212493E39700B7837F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40C13476249528CE00B0C110 /* String+Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Parser.swift"; sourceTree = "<group>"; };
+		40C13479249532CE00B0C110 /* DIRManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIRManager.swift; sourceTree = "<group>"; };
+		40C1347C2495333A00B0C110 /* NSViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,8 +159,10 @@
 		40B6D62F2493E49400B7837F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				40C13478249532AA00B0C110 /* Managers */,
 				40408C412494FF6C0044041A /* Parser */,
 				40B6D6302493E49C00B7837F /* Main */,
+				40C1347B2495331F00B0C110 /* Utilities */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -184,6 +190,22 @@
 				40B6D6052493E39700B7837F /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		40C13478249532AA00B0C110 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				40C13479249532CE00B0C110 /* DIRManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		40C1347B2495331F00B0C110 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				40C1347C2495333A00B0C110 /* NSViewControllerExtension.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +338,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40C1347A249532CE00B0C110 /* DIRManager.swift in Sources */,
+				40C1347D2495333A00B0C110 /* NSViewControllerExtension.swift in Sources */,
 				40B6D6042493E39500B7837F /* ViewController.swift in Sources */,
 				40C13477249528CE00B0C110 /* String+Parser.swift in Sources */,
 				40B6D6022493E39500B7837F /* AppDelegate.swift in Sources */,
