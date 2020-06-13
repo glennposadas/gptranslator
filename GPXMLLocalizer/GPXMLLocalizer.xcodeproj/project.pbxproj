@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40408C432494FF790044041A /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40408C422494FF790044041A /* Parser.swift */; };
 		40B6D6022493E39500B7837F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B6D6012493E39500B7837F /* AppDelegate.swift */; };
 		40B6D6042493E39500B7837F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B6D6032493E39500B7837F /* ViewController.swift */; };
 		40B6D6062493E39700B7837F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40B6D6052493E39700B7837F /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40408C422494FF790044041A /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		40B6D5FE2493E39500B7837F /* GPXMLLocalizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPXMLLocalizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40B6D6012493E39500B7837F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40B6D6032493E39500B7837F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40408C412494FF6C0044041A /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				40408C422494FF790044041A /* Parser.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
 		40B6D5F52493E39500B7837F = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +152,7 @@
 		40B6D62F2493E49400B7837F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				40408C412494FF6C0044041A /* Parser */,
 				40B6D6302493E49C00B7837F /* Main */,
 			);
 			path = Classes;
@@ -304,6 +315,7 @@
 			files = (
 				40B6D6042493E39500B7837F /* ViewController.swift in Sources */,
 				40B6D6022493E39500B7837F /* AppDelegate.swift in Sources */,
+				40408C432494FF790044041A /* Parser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

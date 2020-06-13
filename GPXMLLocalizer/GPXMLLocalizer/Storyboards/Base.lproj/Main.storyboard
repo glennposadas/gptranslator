@@ -742,9 +742,21 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4NN-yx-4E6">
+                                <rect key="frame" x="192" y="59" width="96" height="32"/>
+                                <buttonCell key="cell" type="push" title="Generate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AcD-oN-Y5v">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="generate:" target="XfG-lQ-9wD" id="MmN-mO-JGA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="4NN-yx-4E6" firstAttribute="top" secondItem="0LR-ZR-ujk" secondAttribute="bottom" constant="38" id="7MZ-qv-ocH"/>
                             <constraint firstItem="0LR-ZR-ujk" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="OzM-e4-z2S"/>
+                            <constraint firstItem="4NN-yx-4E6" firstAttribute="centerX" secondItem="0LR-ZR-ujk" secondAttribute="centerX" id="d7w-Vb-Rgs"/>
                             <constraint firstItem="0LR-ZR-ujk" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="doH-7o-GcF"/>
                         </constraints>
                     </view>

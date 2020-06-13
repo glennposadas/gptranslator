@@ -8,6 +8,9 @@
 
 import Cocoa
 
+/**
+ The main controller of the application.
+ */
 class ViewController: NSViewController {
     
     // MARK: - Properties
@@ -43,6 +46,13 @@ class ViewController: NSViewController {
     
     // MARK: IBActions
     
+    @IBAction func generate(_ sender: Any) {
+        let firstURL = self.englishPaths.first!
+        let parser = XMLParser(contentsOf: firstURL)
+        parser?.delegate = self
+        parser?.parse()
+    }
+    
     @IBAction func selectEnglishFiles(_ sender: NSButton) {
         self.handleSelectionOfFiles { urls in
             self.englishPaths = urls
@@ -56,3 +66,14 @@ class ViewController: NSViewController {
     }
 }
 
+extension ViewController: XMLParserDelegate {
+    func parser(_ parser: XMLParser, foundCharacters string: String) {
+        print("Found characters!!! \(string)")
+    }
+    
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
+        print("didStartElement: \(elementName)")
+        print("qualifiedName: \(qName)")
+        print("attributes: \(attributeDict)")
+    }
+}
