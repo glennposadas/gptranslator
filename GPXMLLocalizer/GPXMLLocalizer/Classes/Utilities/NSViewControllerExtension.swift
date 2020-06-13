@@ -8,6 +8,8 @@
 
 import Cocoa
 
+typealias SelectedFilesBlock = ((_ urls: [URL]) -> Void)?
+
 extension NSViewController {
     func showCompletionAlert() {
         let alert = NSAlert()
@@ -30,5 +32,21 @@ extension NSViewController {
                 }
             }
         }
+    }
+    
+    func selectFiles(fileTypes: [String] = ["xml"], withBlock completion: SelectedFilesBlock) {
+        let dialog = NSOpenPanel()
+        dialog.title = "Choose your .xml files"
+        dialog.canCreateDirectories = true
+        dialog.allowsMultipleSelection = true
+        dialog.allowedFileTypes = fileTypes
+        
+        if (dialog.runModal() == NSApplication.ModalResponse.OK) {
+            let result = dialog.urls
+            completion?(result)
+            return
+        }
+        
+        completion?([])
     }
 }
