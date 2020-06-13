@@ -755,14 +755,25 @@
                             <progressIndicator wantsLayer="YES" maxValue="100" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="LmQ-0E-zZb">
                                 <rect key="frame" x="232" y="68" width="16" height="16"/>
                             </progressIndicator>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ght-P2-R1p">
+                                <rect key="frame" x="18" y="215" width="444" height="35"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="GPXML - LOCALIZER" id="LvH-4L-CGF">
+                                    <font key="font" metaFont="systemHeavy" size="30"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="LmQ-0E-zZb" firstAttribute="centerY" secondItem="4NN-yx-4E6" secondAttribute="centerY" id="04v-9v-JUI"/>
+                            <constraint firstAttribute="trailing" secondItem="ght-P2-R1p" secondAttribute="trailing" constant="20" id="5K8-8P-3Ie"/>
                             <constraint firstItem="4NN-yx-4E6" firstAttribute="top" secondItem="0LR-ZR-ujk" secondAttribute="bottom" constant="38" id="7MZ-qv-ocH"/>
+                            <constraint firstItem="ght-P2-R1p" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="OO5-7x-rCk"/>
                             <constraint firstItem="0LR-ZR-ujk" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="OzM-e4-z2S"/>
                             <constraint firstItem="4NN-yx-4E6" firstAttribute="centerX" secondItem="0LR-ZR-ujk" secondAttribute="centerX" id="d7w-Vb-Rgs"/>
                             <constraint firstItem="0LR-ZR-ujk" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="doH-7o-GcF"/>
                             <constraint firstItem="LmQ-0E-zZb" firstAttribute="leading" secondItem="4NN-yx-4E6" secondAttribute="trailing" constant="-50" id="qtB-eZ-l4b"/>
+                            <constraint firstItem="ght-P2-R1p" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="rwE-I9-ohY"/>
                         </constraints>
                     </view>
                     <connections>
