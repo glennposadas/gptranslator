@@ -752,14 +752,25 @@
                                     <action selector="generate:" target="XfG-lQ-9wD" id="MmN-mO-JGA"/>
                                 </connections>
                             </button>
+                            <progressIndicator wantsLayer="YES" maxValue="100" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="LmQ-0E-zZb">
+                                <rect key="frame" x="232" y="68" width="16" height="16"/>
+                            </progressIndicator>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="LmQ-0E-zZb" firstAttribute="centerY" secondItem="4NN-yx-4E6" secondAttribute="centerY" id="04v-9v-JUI"/>
                             <constraint firstItem="4NN-yx-4E6" firstAttribute="top" secondItem="0LR-ZR-ujk" secondAttribute="bottom" constant="38" id="7MZ-qv-ocH"/>
                             <constraint firstItem="0LR-ZR-ujk" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="OzM-e4-z2S"/>
                             <constraint firstItem="4NN-yx-4E6" firstAttribute="centerX" secondItem="0LR-ZR-ujk" secondAttribute="centerX" id="d7w-Vb-Rgs"/>
                             <constraint firstItem="0LR-ZR-ujk" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="doH-7o-GcF"/>
+                            <constraint firstItem="LmQ-0E-zZb" firstAttribute="leading" secondItem="4NN-yx-4E6" secondAttribute="trailing" constant="-50" id="qtB-eZ-l4b"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="generateBtn" destination="4NN-yx-4E6" id="dcv-0y-33x"/>
+                        <outlet property="loader" destination="LmQ-0E-zZb" id="9ZI-1M-Tdl"/>
+                        <outlet property="selectEnglishFilesBtn" destination="0QY-IX-T3k" id="yLL-qM-5lZ"/>
+                        <outlet property="selectItalianFilesBtn" destination="jde-jU-eEd" id="UbF-Us-BHv"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
