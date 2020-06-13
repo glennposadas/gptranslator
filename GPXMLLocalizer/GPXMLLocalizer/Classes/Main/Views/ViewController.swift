@@ -39,25 +39,43 @@ class ViewController: NSViewController {
         
         self.setupUI()
     }
-        
+    
     private func setupUI() {
         self.loader.alphaValue = 0
     }
     
     private func buildFiles() {
-        for (index, str) in self.englishKeys.enumerated() {
-            print("KEY: \(str) | VALUE: \(self.englishValues[index])")
+        var content = ""
+        
+        var pairs = [String]()
+        
+        for (index, key) in self.englishKeys.enumerated() {
+            let value = self.englishValues[index]
+            print("KEY: \(key) | VALUE: \(value)")
+            
+            let newKeyValuePair = "\(key) = \(value)"
+            pairs.append(newKeyValuePair)
         }
         
-        let filename = DIRManager.documentsDirectory.appendingPathComponent("English.txt")
-
-        do {
-            try "HELLOOOZZZ".write(to: filename, atomically: true, encoding: .utf8)
-        } catch {
-            self.showFileWriteError()
-        }
+        content = pairs.joined(separator: "\n")
         
-        self.handleSuccess()
+        let savePanel = NSSavePanel()
+        savePanel.nameFieldStringValue = "lala.txt"
+        savePanel.canCreateDirectories = true
+        savePanel.allowedFileTypes = ["txt"]
+        
+        if savePanel.runModal() == NSApplication.ModalResponse.OK {
+            
+            let entryPath = savePanel.url
+            
+            do {
+                try content.write(to: entryPath!, atomically: true, encoding: String.Encoding.utf8)
+                self.handleSuccess()
+            } catch {
+                print(error.localizedDescription)
+                self.showFileWriteError()
+            }
+        }
     }
     
     private func handleSuccess() {
@@ -131,6 +149,4 @@ extension ViewController: XMLParserDelegate {
             !key.isEmpty else { return }
         self.englishKeys.append(key)
     }
-    
-    
 }

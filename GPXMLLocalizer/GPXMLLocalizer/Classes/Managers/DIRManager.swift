@@ -9,7 +9,7 @@
 import Foundation
 
 struct DIRManager {
-    static var documentsDirectory: URL {
+    static var desktopPath: URL {
         FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     }
 }
