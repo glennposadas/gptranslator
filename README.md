@@ -2,7 +2,7 @@
 
 ![enter image description here](https://i.imgur.com/2sIjukq.png)
 
-****GPXML-Localizer**** is a macos application, an online assessment test, as part of my job application at [Innovattic.](https://www.innovattic.to/)
+****GPXML-Localizer**** is a macos application, an online assessment test, as part of my job application.
 
 So far the application can only write a single translation file.
 
